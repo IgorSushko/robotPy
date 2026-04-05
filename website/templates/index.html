@@ -7,6 +7,12 @@
 </head>
 <body>
 
+    <div class="wifi-signal-container">
+        <span>Wi-Fi Signal:</span>
+        <div id="wifi-level"></div>
+        <span id="wifi-percentage"></span>
+    </div>
+
     <div class="controls">
         <button id="up-btn" class="d-pad-btn">▲ UP</button>
         <button id="down-btn" class="d-pad-btn">▼ DOWN</button>
@@ -17,3 +23,4 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
+

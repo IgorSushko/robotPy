@@ -37,3 +37,40 @@ body {
 #down-btn { bottom: 0; left: 50%; transform: translateX(-50%); }
 #left-btn { left: 0; top: 50%; transform: translateY(-50%); }
 #right-btn { right: 0; top: 50%; transform: translateY(-50%); }
+
+.wifi-signal-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+#wifi-level {
+    width: 150px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.3s;
+}
+
+#wifi-level::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(255,255,255,0.3);
+    width: 100%;
+}
+
+#wifi-percentage {
+    font-size: 14px;
+}
+
