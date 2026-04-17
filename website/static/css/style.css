@@ -3,40 +3,77 @@ body {
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end; /* push content to bottom */
     height: 100vh;
     margin: 0;
+    padding-bottom: 80px; /* more space from bottom */
 }
 
 .controls {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
 }
 
 .d-pad-btn {
     position: absolute;
     width: 60px;
-    height: 40px;
-    background-color: #4CAF50;
+    height: 60px;
+    background: linear-gradient(145deg, #5fdc7a, #3ea655);
     border: none;
+    border-radius: 10px;
     color: white;
     font-size: 18px;
     cursor: pointer;
-    opacity: 0.7;
-    transition: 0.3s;
+    opacity: 0.95;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+    /* 3D effect */
+    box-shadow: 
+        0 6px 0 #2e7d32,          /* bottom shadow (depth) */
+        0 8px 15px rgba(0,0,0,0.4); /* soft shadow */
 }
 
+/* pressed effect */
+.d-pad-btn:active {
+    transform: translateY(4px);
+    box-shadow: 
+        0 2px 0 #2e7d32,
+        0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* hover (slight lift) */
 .d-pad-btn:hover {
-    background-color: #69F0AE;
-    opacity: 1;
+    background: linear-gradient(145deg, #69F0AE, #43a047);
 }
 
-/* Positioning buttons */
-#up-btn { top: 0; left: 50%; transform: translateX(-50%); }
-#down-btn { bottom: 0; left: 50%; transform: translateX(-50%); }
-#left-btn { left: 0; top: 50%; transform: translateY(-50%); }
-#right-btn { right: 0; top: 50%; transform: translateY(-50%); }
+#up-btn { top: 30px; left: 50%; transform: translateX(-50%); }
+
+#down-btn { 
+    top: 110px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+#left-btn { 
+    top: 110px; 
+    left: 0px; 
+}
+
+#right-btn { 
+    top: 110px; 
+    right: 0px; 
+}
+
+#up-btn:active,
+#down-btn:active {
+    transform: translateX(-50%) translateY(4px);
+}
+
+#left-btn:active,
+#right-btn:active {
+    transform: translateY(4px);
+}
 
 .wifi-signal-container {
     position: absolute;
@@ -73,4 +110,3 @@ body {
 #wifi-percentage {
     font-size: 14px;
 }
-
